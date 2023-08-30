@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundColor: "#f5f5f5" }}>
       <EditModal notes={notes} setNotes={setNotes} editId={editId} />
       <Navbar notes={notes} setFilteredNotes={setFilteredNotes} />
       <div className="container">
@@ -39,10 +39,11 @@ function App() {
               setNotes={setNotes}
             />
           </div>
-          <div className="col-md-6" style={{ marginTop: "36px" }}>
+          <div className="col-md-6" style={{ marginTop: "16px" }}>
+            <h3>Notes List</h3>
             <div className="d-flex flex-wrap">
               {notes.length === 0 ? (
-                <div className="card mb-3">
+                <div className="card mb-3" style={{ marginTop: "16px" }}>
                   <div className="card-body">
                     <h5 className="card-title">Notes</h5>
                     <p className="card-text">
