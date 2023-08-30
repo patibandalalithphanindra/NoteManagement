@@ -1,11 +1,11 @@
-function EditModal({editId, notes, setNotes}) {
+function EditModal({ editId, notes, setNotes }) {
   const updateHandler = () => {
     const updatedNotes = notes.map((element) => {
       if (editId === element.id) {
         return {
           ...element,
-          title: document.getElementById('edittitle').value,
-          description: document.getElementById('editdesc').value,
+          title: document.getElementById("edittitle").value,
+          description: document.getElementById("editdesc").value,
         };
       } else {
         return element;
@@ -37,26 +37,37 @@ function EditModal({editId, notes, setNotes}) {
               ></button>
             </div>
             <div className="modal-body">
-            <form styles={{border:"2px solid grey",borderRadius:"10px", padding:"30px"}}>
-            <div className="mb-3">
-              <label for="title" className="form-label">
-                Title
-              </label>
-              <input type="email" className="form-control" id="edittitle" placeholder="Enter your Title"/>
-            </div>
-            <div className="mb-3">
-              <label for="desc" className="form-label">
-                Description
-              </label>
-              <textarea
-                name="desc"
-                id="editdesc"
-                rows="3"
-                className="form-control"
-                placeholder="Enter your Description"
-              ></textarea>
-            </div>
-          </form>
+              <form
+                styles={{
+                  border: "2px solid grey",
+                  borderRadius: "10px",
+                  padding: "30px",
+                }}
+              >
+                <div className="mb-3">
+                  <label for="title" className="form-label">
+                    Title
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="edittitle"
+                    placeholder="Enter your Title"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label for="desc" className="form-label">
+                    Description
+                  </label>
+                  <textarea
+                    name="desc"
+                    id="editdesc"
+                    rows="3"
+                    className="form-control"
+                    placeholder="Enter your Description"
+                  ></textarea>
+                </div>
+              </form>
             </div>
             <div className="modal-footer">
               <button

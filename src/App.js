@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Notes from "./components/Notes";
 import EditModal from "./components/EditModal";
 import { useState } from "react";
+
 function App() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -11,15 +12,13 @@ function App() {
   const [editId, setEditId] = useState("");
   const [filteredNotes, setFilteredNotes] = useState([]);
 
-
   localStorage.setItem("notes", JSON.stringify(notes));
 
-  function getNotesFromLocalStorage(){
+  function getNotesFromLocalStorage() {
     const note = JSON.parse(localStorage.getItem("notes"));
-    if(note){
+    if (note) {
       return note;
-    }
-    else {
+    } else {
       return [];
     }
   }
@@ -27,22 +26,22 @@ function App() {
   return (
     <div className="App">
       <EditModal notes={notes} setNotes={setNotes} editId={editId} />
-      <Navbar notes={notes} setFilteredNotes={setFilteredNotes}/>
-      <Form
-        title={title}
-        setTitle={setTitle}
-        description={description}
-        setDescription={setDescription}
-        notes={notes}
-        setNotes={setNotes}
-      />
+      <Navbar notes={notes} setFilteredNotes={setFilteredNotes} />
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-10">
-            <h1 className="mb-3">Your Notes</h1>
-            {notes.length === 0 ? (
-              <>
-                {" "}
+          <div className="col-md-6">
+            <Form
+              title={title}
+              setTitle={setTitle}
+              description={description}
+              setDescription={setDescription}
+              notes={notes}
+              setNotes={setNotes}
+            />
+          </div>
+          <div className="col-md-6">
+            <div className="d-flex flex-wrap">
+              {notes.length === 0 ? (
                 <div className="card mb-3">
                   <div className="card-body">
                     <h5 className="card-title">Notes</h5>
@@ -51,17 +50,18 @@ function App() {
                     </p>
                   </div>
                 </div>
-              </>
-            ) : notes.map((element) => {
-              return (
-                <Notes 
-                element={element} 
-                key={element.id} 
-                notes={notes} 
-                setNotes={setNotes} 
-                setEditId={setEditId}/>
-              )
-            })}
+              ) : (
+                notes.map((element) => (
+                  <Notes
+                    element={element}
+                    key={element.id}
+                    notes={notes}
+                    setNotes={setNotes}
+                    setEditId={setEditId}
+                  />
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
