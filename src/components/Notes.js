@@ -21,7 +21,7 @@ function Notes({ element, notes, setNotes, setEditId }) {
     <>
       <div
         className="col-md-4 card mb-3"
-        style={{ margin: "10px", backgroundColor: "#f8f9fa" }}
+        style={{ margin: "35px", backgroundColor: "#f8f9fa" }}
       >
         <div className="card-body" style={{ textTransform: "capitalize" }}>
           <h5 className="card-title">{element.title}</h5>

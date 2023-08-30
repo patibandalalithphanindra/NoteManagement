@@ -26,7 +26,6 @@ function Form({
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // Set error states for both fields if they are empty
     if (title.trim() === "") {
       setTitleError("Please enter a title");
     } else {
@@ -62,11 +61,14 @@ function Form({
     <div className="container my-3">
       <div className="row justify-content-center">
         <div className="col-md-10">
+          <h3>Enter a Note here</h3>
           <form
             style={{
               border: "2px solid grey",
               borderRadius: "10px",
               padding: "30px",
+              backgroundColor: "#f8f9fa",
+              marginTop: "20px",
             }}
           >
             <div className="mb-3">

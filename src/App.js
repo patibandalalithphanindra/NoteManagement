@@ -39,7 +39,7 @@ function App() {
               setNotes={setNotes}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" style={{ marginTop: "36px" }}>
             <div className="d-flex flex-wrap">
               {notes.length === 0 ? (
                 <div className="card mb-3">
