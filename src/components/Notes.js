@@ -17,6 +17,7 @@ function Notes({ element, notes, setNotes, setEditId }) {
       }
     });
   };
+
   return (
     <>
       <div
